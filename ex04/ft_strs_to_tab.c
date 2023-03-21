@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabelo- <arabelo-@student.42lisboa.c      +#+  +:+       +#+        */
+/*   By: arabelo- <arabelo-@Student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:04:42 by arabelo-          #+#    #+#             */
-/*   Updated: 2023/03/20 20:25:16 by arabelo-         ###   ########.fr       */
+/*   Updated: 2023/03/21 11:18:07 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+/* #include <stdio.h> */
 #include "ft_stock_str.h"
 
 int	ft_strlen(char *str)
@@ -30,7 +30,7 @@ char	*ft_strdup(char *str)
 	int		i;
 
 	i = 0;
-	copie = (char *)malloc(sizeof(*str) * ft_strlen(str));
+	copie = (char *)malloc(sizeof(*str) * ft_strlen(str) + 1);
 	if (!copie)
 		return (NULL);
 	while (str[i])
@@ -44,11 +44,13 @@ char	*ft_strdup(char *str)
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	int		i;
+	int			i;
 	t_stock_str	*stock;
 
 	i = 0;
-	stock = (t_stock_str *)malloc(sizeof(*stock) * ac);
+	stock = (t_stock_str *)malloc(sizeof(*stock) * (ac + 1));
+	if (!stock)
+		return (NULL);
 	while (i < ac)
 	{
 		stock[i].size = ft_strlen(av[i]);
@@ -56,27 +58,24 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		stock[i].copy = ft_strdup(av[i]);
 		i++;
 	}
+	stock[i].str = 0;
 	return (stock);
 }
 
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	t_stock_str	*a;
-	int	i;
-	int	j;
-	a = ft_strs_to_tab(ac, av);
-	i = 0;
-	while (i < ac)
+
+	if (ac > 1)
 	{
-//		printf("Size: %d", *a->size);
-		while (*a->*str)
+		a = ft_strs_to_tab(ac, av);
+		while (a->str)
 		{
-			printf("String: %c", *a->*str);
-			str++;
+			printf("String: %s\n", a->str);
+			printf("Copy: %s\n", a->copy);
+			printf("Size: %d\n", a->size);
+			a++;
 		}
-		printf("Copie: %c", *a->copy);
-		i++;
-		a++;
 	}
 	return (0);
-}
+}*/
