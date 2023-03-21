@@ -6,7 +6,7 @@
 /*   By: arabelo- <arabelo-@Student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:22:02 by arabelo-          #+#    #+#             */
-/*   Updated: 2023/03/21 17:10:48 by arabelo-         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:12:26 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ void	ft_show_tab(struct s_stock_str *par)
 	while (par->str)
 	{
 		putstr(par->str);
-		putstr(par->copy);
 		putnbr(par->size);
 		putchar('\n');
+		putstr(par->copy);
 		par++;
 	}
 }

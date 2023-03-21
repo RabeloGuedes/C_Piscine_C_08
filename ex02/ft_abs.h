@@ -6,7 +6,7 @@
 /*   By: arabelo- <arabelo-@student.42lisboa.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 14:49:57 by arabelo-          #+#    #+#             */
-/*   Updated: 2023/03/20 14:54:18 by arabelo-         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:07:18 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 # define FT_ABS_H
 
-# define ASB(Value)	(Value > 0 ? Value : -Value)
+# define ABS(Value)	(Value > 0 ? Value : -Value)
 
 #endif
